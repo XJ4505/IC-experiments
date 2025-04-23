@@ -1,5 +1,4 @@
 module clock #(
-    parameter CLK_FREQ  = 25_000_000,   //frequency of second
     parameter HOUR      = 5,
     parameter MINUTE    = 3,
     parameter SECOND    = 21

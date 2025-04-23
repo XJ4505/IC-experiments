@@ -6,7 +6,7 @@ module alarm_clock #(
     input clk,
     input rst,
     input en,
-    input reset_alarm,
+    input dis_alarm,
     input [2: 0] signal_increase,
     input [2: 0] signal_decrease,
 
@@ -31,7 +31,7 @@ module alarm_clock #(
                 if({cur_hour, cur_minute, cur_second} == {set_hour, set_minute, set_second}) begin
                     alarming <= 1;
                 end
-                else if(reset_alarm) begin
+                else if(dis_alarm) begin
                     alarming <= 0;
                 end
             end

@@ -5,6 +5,7 @@ module bcd_displayer #(
     parameter BIN_WIDTH = 8,//original binary code width
     parameter BCD_CNT = 3   //number of bcd code to be displayed
 )(
+    input                      en,
     input   [BIN_WIDTH - 1: 0] bin_code,
     output  [BCD_CNT*7 - 1: 0] disp_result
 );
@@ -24,6 +25,7 @@ module bcd_displayer #(
         for(i = 0; i < BCD_CNT; i = i + 1) begin: gen_display
             number_display u_number_display(
                 .sel    (1'b0                   ),
+                .en     (en                     ),
                 .in     (bcd_code[i*4 +: 4]     ),
                 .out    (disp_result[i*7 +: 7]  )
             );
