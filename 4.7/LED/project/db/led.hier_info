@@ -1,0 +1,52 @@
+|led
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => ~NO_FANOUT~
+SW[17] => ~NO_FANOUT~
+LEDR[0] << led_rtl:led_inst.dev
+LEDR[1] << led_rtl:led_inst.dev
+LEDR[2] << led_rtl:led_inst.dev
+LEDR[3] << led_rtl:led_inst.dev
+LEDR[4] << led_rtl:led_inst.dev
+LEDR[5] << <GND>
+LEDR[6] << <GND>
+LEDR[7] << <GND>
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+LEDR[10] << <GND>
+LEDR[11] << <GND>
+LEDR[12] << <GND>
+LEDR[13] << <GND>
+LEDR[14] << <GND>
+LEDR[15] << <GND>
+LEDR[16] << <GND>
+LEDR[17] << <GND>
+
+
+|led|led_rtl:led_inst
+in[0] => dev[0].DATAIN
+in[1] => dev[1].DATAIN
+in[2] => dev[2].DATAIN
+in[3] => dev[3].DATAIN
+in[4] => dev[4].DATAIN
+dev[0] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+dev[1] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+dev[2] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+dev[3] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+dev[4] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+
+

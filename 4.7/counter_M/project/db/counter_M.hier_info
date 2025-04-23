@@ -1,0 +1,170 @@
+|counter_M
+KEY[0] => WideOr0.IN0
+KEY[1] => WideOr0.IN1
+KEY[2] => WideOr0.IN2
+KEY[3] => WideOr0.IN3
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => ~NO_FANOUT~
+SW[17] => ~NO_FANOUT~
+HEX0[0] << bcd_displayer:u_bcd_displayer.disp_result
+HEX0[1] << bcd_displayer:u_bcd_displayer.disp_result
+HEX0[2] << bcd_displayer:u_bcd_displayer.disp_result
+HEX0[3] << bcd_displayer:u_bcd_displayer.disp_result
+HEX0[4] << bcd_displayer:u_bcd_displayer.disp_result
+HEX0[5] << bcd_displayer:u_bcd_displayer.disp_result
+HEX0[6] << bcd_displayer:u_bcd_displayer.disp_result
+HEX1[0] << bcd_displayer:u_bcd_displayer.disp_result
+HEX1[1] << bcd_displayer:u_bcd_displayer.disp_result
+HEX1[2] << bcd_displayer:u_bcd_displayer.disp_result
+HEX1[3] << bcd_displayer:u_bcd_displayer.disp_result
+HEX1[4] << bcd_displayer:u_bcd_displayer.disp_result
+HEX1[5] << bcd_displayer:u_bcd_displayer.disp_result
+HEX1[6] << bcd_displayer:u_bcd_displayer.disp_result
+
+
+|counter_M|counter_rtl:u_counter
+clk => counter[0]~reg0.CLK
+clk => counter[1]~reg0.CLK
+clk => counter[2]~reg0.CLK
+clk => counter[3]~reg0.CLK
+clk => counter[4]~reg0.CLK
+clk => counter[5]~reg0.CLK
+clk => counter[6]~reg0.CLK
+clk => counter[7]~reg0.CLK
+rst => counter[0]~reg0.ACLR
+rst => counter[1]~reg0.ACLR
+rst => counter[2]~reg0.ACLR
+rst => counter[3]~reg0.ACLR
+rst => counter[4]~reg0.ACLR
+rst => counter[5]~reg0.ACLR
+rst => counter[6]~reg0.ACLR
+rst => counter[7]~reg0.ACLR
+en => counter[0]~reg0.ENA
+en => counter[7]~reg0.ENA
+en => counter[6]~reg0.ENA
+en => counter[5]~reg0.ENA
+en => counter[4]~reg0.ENA
+en => counter[3]~reg0.ENA
+en => counter[2]~reg0.ENA
+en => counter[1]~reg0.ENA
+counter[0] <= counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[1] <= counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[2] <= counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[3] <= counter[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[4] <= counter[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[5] <= counter[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[6] <= counter[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[7] <= counter[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_M|bcd_displayer:u_bcd_displayer
+bin_code[0] => bin_code[0].IN1
+bin_code[1] => bin_code[1].IN1
+bin_code[2] => bin_code[2].IN1
+bin_code[3] => bin_code[3].IN1
+bin_code[4] => bin_code[4].IN1
+bin_code[5] => bin_code[5].IN1
+bin_code[6] => bin_code[6].IN1
+bin_code[7] => bin_code[7].IN1
+disp_result[0] <= number_display:gen_display[0].u_number_display.out
+disp_result[1] <= number_display:gen_display[0].u_number_display.out
+disp_result[2] <= number_display:gen_display[0].u_number_display.out
+disp_result[3] <= number_display:gen_display[0].u_number_display.out
+disp_result[4] <= number_display:gen_display[0].u_number_display.out
+disp_result[5] <= number_display:gen_display[0].u_number_display.out
+disp_result[6] <= number_display:gen_display[0].u_number_display.out
+disp_result[7] <= number_display:gen_display[1].u_number_display.out
+disp_result[8] <= number_display:gen_display[1].u_number_display.out
+disp_result[9] <= number_display:gen_display[1].u_number_display.out
+disp_result[10] <= number_display:gen_display[1].u_number_display.out
+disp_result[11] <= number_display:gen_display[1].u_number_display.out
+disp_result[12] <= number_display:gen_display[1].u_number_display.out
+disp_result[13] <= number_display:gen_display[1].u_number_display.out
+
+
+|counter_M|bcd_displayer:u_bcd_displayer|bin2bcd:u_bin2bcd
+bin_code[0] => bcd_code[0].DATAIN
+bin_code[1] => LessThan5.IN8
+bin_code[1] => Add5.IN8
+bin_code[1] => temp_bcd.DATAA
+bin_code[2] => LessThan3.IN8
+bin_code[2] => Add3.IN8
+bin_code[2] => temp_bcd.DATAA
+bin_code[3] => LessThan2.IN8
+bin_code[3] => Add2.IN8
+bin_code[3] => temp_bcd.DATAA
+bin_code[4] => LessThan1.IN8
+bin_code[4] => Add1.IN8
+bin_code[4] => temp_bcd.DATAA
+bin_code[5] => LessThan0.IN6
+bin_code[5] => Add0.IN6
+bin_code[5] => temp_bcd.DATAA
+bin_code[6] => LessThan0.IN5
+bin_code[6] => Add0.IN5
+bin_code[6] => temp_bcd.DATAA
+bin_code[7] => LessThan0.IN4
+bin_code[7] => Add0.IN4
+bin_code[7] => temp_bcd.DATAA
+bcd_code[0] <= bin_code[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd_code[1] <= temp_bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd_code[2] <= temp_bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd_code[3] <= temp_bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd_code[4] <= temp_bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd_code[5] <= temp_bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd_code[6] <= temp_bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd_code[7] <= temp_bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_M|bcd_displayer:u_bcd_displayer|number_display:gen_display[0].u_number_display
+sel => always1.IN1
+in[0] => Decoder0.IN3
+in[0] => LessThan0.IN8
+in[1] => Decoder0.IN2
+in[1] => LessThan0.IN7
+in[2] => Decoder0.IN1
+in[2] => LessThan0.IN6
+in[3] => Decoder0.IN0
+in[3] => LessThan0.IN5
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_M|bcd_displayer:u_bcd_displayer|number_display:gen_display[1].u_number_display
+sel => always1.IN1
+in[0] => Decoder0.IN3
+in[0] => LessThan0.IN8
+in[1] => Decoder0.IN2
+in[1] => LessThan0.IN7
+in[2] => Decoder0.IN1
+in[2] => LessThan0.IN6
+in[3] => Decoder0.IN0
+in[3] => LessThan0.IN5
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

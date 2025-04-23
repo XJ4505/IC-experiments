@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -2.838
+TNS   : -69.657
+
+Type  : Slow 1200mV 85C Model Setup 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : -0.678
+TNS   : -6.581
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.293
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : 0.420
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -37.695
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : -1.285
+TNS   : -215.880
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.544
+TNS   : -61.882
+
+Type  : Slow 1200mV 0C Model Setup 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : -0.550
+TNS   : -3.332
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.266
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : 0.380
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -37.695
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : -1.285
+TNS   : -215.880
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.881
+TNS   : -20.680
+
+Type  : Fast 1200mV 0C Model Setup 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : 0.159
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.077
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -37.673
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'cycled_displayer_rtl:u_cycled_displayer_rtl|clk_div:u_clk|neg_clk'
+Slack : -1.000
+TNS   : -168.000
+
+------------------------------------------------------------

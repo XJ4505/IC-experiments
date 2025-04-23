@@ -1,0 +1,8 @@
+read_verilog -sv -formal -overwrite {workspace}/divider50/code/clk_div.v
+read_verilog -sv -formal -overwrite {workspace}/divider50/code/counter_M.v
+read_verilog -sv -formal -overwrite {workspace}/counter_M/code/bcd_displayer.v
+read_verilog -sv -formal -overwrite {workspace}/BCD/code/bin2bcd.v
+read_verilog -sv -formal -overwrite {workspace}/calculator/code/number_display.v
+read_verilog -sv -formal -overwrite {workspace}/divider50/code/timer_rtl.v
+design -reset-vlog; proc;
+write_json {workspace}/netlist/timer_rtl.json

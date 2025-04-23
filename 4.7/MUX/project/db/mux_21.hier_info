@@ -1,0 +1,64 @@
+|mux_21
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => SW[9].IN1
+SW[10] => SW[10].IN1
+SW[11] => SW[11].IN1
+SW[12] => SW[12].IN1
+SW[13] => SW[13].IN1
+SW[14] => SW[14].IN1
+SW[15] => SW[15].IN1
+SW[16] => ~NO_FANOUT~
+SW[17] => SW[17].IN1
+LEDG[0] <= mux_21_rtl:u_mux_21_rtl.out
+LEDG[1] <= mux_21_rtl:u_mux_21_rtl.out
+LEDG[2] <= mux_21_rtl:u_mux_21_rtl.out
+LEDG[3] <= mux_21_rtl:u_mux_21_rtl.out
+LEDG[4] <= mux_21_rtl:u_mux_21_rtl.out
+LEDG[5] <= mux_21_rtl:u_mux_21_rtl.out
+LEDG[6] <= mux_21_rtl:u_mux_21_rtl.out
+LEDG[7] <= mux_21_rtl:u_mux_21_rtl.out
+
+
+|mux_21|mux_21_rtl:u_mux_21_rtl
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+data1[0] => out.DATAA
+data1[1] => out.DATAA
+data1[2] => out.DATAA
+data1[3] => out.DATAA
+data1[4] => out.DATAA
+data1[5] => out.DATAA
+data1[6] => out.DATAA
+data1[7] => out.DATAA
+data2[0] => out.DATAB
+data2[1] => out.DATAB
+data2[2] => out.DATAB
+data2[3] => out.DATAB
+data2[4] => out.DATAB
+data2[5] => out.DATAB
+data2[6] => out.DATAB
+data2[7] => out.DATAB
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

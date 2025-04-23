@@ -1,0 +1,7 @@
+
+State Machine - |vibration_clearing|vibration_clearing_rtl:u_vc|cur_state
+Name cur_state.RISE cur_state.HOLD cur_state.FALL cur_state.IDLE 
+cur_state.IDLE 0 0 0 0 
+cur_state.FALL 0 0 1 1 
+cur_state.HOLD 0 1 0 1 
+cur_state.RISE 1 0 0 1 

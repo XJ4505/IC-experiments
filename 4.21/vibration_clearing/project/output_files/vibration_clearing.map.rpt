@@ -1,0 +1,696 @@
+Analysis & Synthesis report for vibration_clearing
+Mon Apr 21 21:09:14 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |vibration_clearing|vibration_clearing_rtl:u_vc|cur_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|clk_div:u_clk_div
+ 13. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer
+ 14. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div
+ 15. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|counter_M:u_counter
+ 16. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer
+ 17. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|bin2bcd:u_bin2bcd
+ 18. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[0].u_number_display
+ 19. Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[1].u_number_display
+ 20. Parameter Settings for User Entity Instance: counter_M:u_counter_M
+ 21. Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer
+ 22. Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer|bin2bcd:u_bin2bcd
+ 23. Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer|number_display:gen_display[0].u_number_display
+ 24. Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer|number_display:gen_display[1].u_number_display
+ 25. Port Connectivity Checks: "counter_M:u_counter_M"
+ 26. Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[1].u_number_display"
+ 27. Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[0].u_number_display"
+ 28. Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer|counter_M:u_counter"
+ 29. Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer"
+ 30. Port Connectivity Checks: "vibration_clearing_rtl:u_vc|clk_div:u_clk_div"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Apr 21 21:09:14 2025          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; vibration_clearing                             ;
+; Top-level Entity Name              ; vibration_clearing                             ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 56                                             ;
+;     Total combinational functions  ; 54                                             ;
+;     Dedicated logic registers      ; 33                                             ;
+; Total registers                    ; 33                                             ;
+; Total pins                         ; 45                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; vibration_clearing ; vibration_clearing ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; ../code/vibration_clearing_rtl.v ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing_rtl.v ;         ;
+; ../code/vibration_clearing.v     ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v     ;         ;
+; ../code/timer.v                  ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v                  ;         ;
+; ../code/number_display.v         ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/number_display.v         ;         ;
+; ../code/counter_M.v              ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/counter_M.v              ;         ;
+; ../code/clk_div.v                ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/clk_div.v                ;         ;
+; ../code/bin2bcd.v                ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/bin2bcd.v                ;         ;
+; ../code/bcd_displayer.v          ; yes             ; User Verilog HDL File  ; D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/bcd_displayer.v          ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 56             ;
+;                                             ;                ;
+; Total combinational functions               ; 54             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 22             ;
+;     -- 3 input functions                    ; 6              ;
+;     -- <=2 input functions                  ; 26             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 35             ;
+;     -- arithmetic mode                      ; 19             ;
+;                                             ;                ;
+; Total registers                             ; 33             ;
+;     -- Dedicated logic registers            ; 33             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 45             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 17             ;
+; Total fan-out                               ; 308            ;
+; Average fan-out                             ; 1.74           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                          ;
++--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Entity Name            ; Library Name ;
++--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+------------------------+--------------+
+; |vibration_clearing                                    ; 54 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |vibration_clearing                                                                              ; vibration_clearing     ; work         ;
+;    |bcd_displayer:u_bcd_displayer|                     ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|bcd_displayer:u_bcd_displayer                                                ; bcd_displayer          ; work         ;
+;       |bin2bcd:u_bin2bcd|                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|bcd_displayer:u_bcd_displayer|bin2bcd:u_bin2bcd                              ; bin2bcd                ; work         ;
+;       |number_display:gen_display[0].u_number_display| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|bcd_displayer:u_bcd_displayer|number_display:gen_display[0].u_number_display ; number_display         ; work         ;
+;    |counter_M:u_counter_M|                             ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|counter_M:u_counter_M                                                        ; counter_M              ; work         ;
+;    |vibration_clearing_rtl:u_vc|                       ; 42 (6)              ; 29 (4)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|vibration_clearing_rtl:u_vc                                                  ; vibration_clearing_rtl ; work         ;
+;       |clk_div:u_clk_div|                              ; 26 (26)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|vibration_clearing_rtl:u_vc|clk_div:u_clk_div                                ; clk_div                ; work         ;
+;       |timer:u_timer|                                  ; 10 (0)              ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|vibration_clearing_rtl:u_vc|timer:u_timer                                    ; timer                  ; work         ;
+;          |clk_div:u_clk_div|                           ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div                  ; clk_div                ; work         ;
+;          |counter_M:u_counter|                         ; 9 (9)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vibration_clearing|vibration_clearing_rtl:u_vc|timer:u_timer|counter_M:u_counter                ; counter_M              ; work         ;
++--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |vibration_clearing|vibration_clearing_rtl:u_vc|cur_state          ;
++----------------+----------------+----------------+----------------+----------------+
+; Name           ; cur_state.RISE ; cur_state.HOLD ; cur_state.FALL ; cur_state.IDLE ;
++----------------+----------------+----------------+----------------+----------------+
+; cur_state.IDLE ; 0              ; 0              ; 0              ; 0              ;
+; cur_state.FALL ; 0              ; 0              ; 1              ; 1              ;
+; cur_state.HOLD ; 0              ; 1              ; 0              ; 1              ;
+; cur_state.RISE ; 1              ; 0              ; 0              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                           ;
++---------------------------------------------------------------------+----------------------------------------+
+; Register name                                                       ; Reason for Removal                     ;
++---------------------------------------------------------------------+----------------------------------------+
+; vibration_clearing_rtl:u_vc|clk_div:u_clk_div|neg_clk               ; Stuck at VCC due to stuck port data_in ;
+; vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div|cnt[-1] ; Stuck at GND due to stuck port data_in ;
+; vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div|cnt[0]  ; Stuck at GND due to stuck port data_in ;
+; vibration_clearing_rtl:u_vc|cur_state~4                             ; Lost fanout                            ;
+; vibration_clearing_rtl:u_vc|cur_state~5                             ; Lost fanout                            ;
+; Total Number of Removed Registers = 5                               ;                                        ;
++---------------------------------------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                              ;
++-------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
+; Register name                                         ; Reason for Removal        ; Registers Removed due to This Register                               ;
++-------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
+; vibration_clearing_rtl:u_vc|clk_div:u_clk_div|neg_clk ; Stuck at VCC              ; vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div|cnt[-1], ;
+;                                                       ; due to stuck port data_in ; vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div|cnt[0]   ;
++-------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 33    ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|clk_div:u_clk_div ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; N              ; 50000 ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; TIME_SET       ; 20    ; Signed Integer                                                ;
+; CLK_SET        ; 1     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; N              ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|counter_M:u_counter ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; M              ; 20    ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; BIN_WIDTH      ; 8     ; Signed Integer                                                                          ;
+; BCD_CNT        ; 2     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|bin2bcd:u_bin2bcd ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                      ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------+
+; BIN_WIDTH      ; 8     ; Signed Integer                                                                                            ;
+; BCD_CNT        ; 2     ; Signed Integer                                                                                            ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[0].u_number_display ;
++----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                                                 ;
++----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+; in0            ; 1000000 ; Unsigned Binary                                                                                                                      ;
+; in1            ; 1111001 ; Unsigned Binary                                                                                                                      ;
+; in2            ; 0100100 ; Unsigned Binary                                                                                                                      ;
+; in3            ; 0110000 ; Unsigned Binary                                                                                                                      ;
+; in4            ; 0011001 ; Unsigned Binary                                                                                                                      ;
+; in5            ; 0010010 ; Unsigned Binary                                                                                                                      ;
+; in6            ; 0000010 ; Unsigned Binary                                                                                                                      ;
+; in7            ; 1111000 ; Unsigned Binary                                                                                                                      ;
+; in8            ; 0000000 ; Unsigned Binary                                                                                                                      ;
+; in9            ; 0010000 ; Unsigned Binary                                                                                                                      ;
+; in10           ; 0001000 ; Unsigned Binary                                                                                                                      ;
+; in11           ; 0000011 ; Unsigned Binary                                                                                                                      ;
+; in12           ; 1000110 ; Unsigned Binary                                                                                                                      ;
+; in13           ; 0100001 ; Unsigned Binary                                                                                                                      ;
+; in14           ; 0000110 ; Unsigned Binary                                                                                                                      ;
+; in15           ; 0001110 ; Unsigned Binary                                                                                                                      ;
++----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[1].u_number_display ;
++----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                                                 ;
++----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+; in0            ; 1000000 ; Unsigned Binary                                                                                                                      ;
+; in1            ; 1111001 ; Unsigned Binary                                                                                                                      ;
+; in2            ; 0100100 ; Unsigned Binary                                                                                                                      ;
+; in3            ; 0110000 ; Unsigned Binary                                                                                                                      ;
+; in4            ; 0011001 ; Unsigned Binary                                                                                                                      ;
+; in5            ; 0010010 ; Unsigned Binary                                                                                                                      ;
+; in6            ; 0000010 ; Unsigned Binary                                                                                                                      ;
+; in7            ; 1111000 ; Unsigned Binary                                                                                                                      ;
+; in8            ; 0000000 ; Unsigned Binary                                                                                                                      ;
+; in9            ; 0010000 ; Unsigned Binary                                                                                                                      ;
+; in10           ; 0001000 ; Unsigned Binary                                                                                                                      ;
+; in11           ; 0000011 ; Unsigned Binary                                                                                                                      ;
+; in12           ; 1000110 ; Unsigned Binary                                                                                                                      ;
+; in13           ; 0100001 ; Unsigned Binary                                                                                                                      ;
+; in14           ; 0000110 ; Unsigned Binary                                                                                                                      ;
+; in15           ; 0001110 ; Unsigned Binary                                                                                                                      ;
++----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_M:u_counter_M ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; M              ; 15    ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; BIN_WIDTH      ; 8     ; Signed Integer                                    ;
+; BCD_CNT        ; 2     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer|bin2bcd:u_bin2bcd ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; BIN_WIDTH      ; 8     ; Signed Integer                                                      ;
+; BCD_CNT        ; 2     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer|number_display:gen_display[0].u_number_display ;
++----------------+---------+------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                           ;
++----------------+---------+------------------------------------------------------------------------------------------------+
+; in0            ; 1000000 ; Unsigned Binary                                                                                ;
+; in1            ; 1111001 ; Unsigned Binary                                                                                ;
+; in2            ; 0100100 ; Unsigned Binary                                                                                ;
+; in3            ; 0110000 ; Unsigned Binary                                                                                ;
+; in4            ; 0011001 ; Unsigned Binary                                                                                ;
+; in5            ; 0010010 ; Unsigned Binary                                                                                ;
+; in6            ; 0000010 ; Unsigned Binary                                                                                ;
+; in7            ; 1111000 ; Unsigned Binary                                                                                ;
+; in8            ; 0000000 ; Unsigned Binary                                                                                ;
+; in9            ; 0010000 ; Unsigned Binary                                                                                ;
+; in10           ; 0001000 ; Unsigned Binary                                                                                ;
+; in11           ; 0000011 ; Unsigned Binary                                                                                ;
+; in12           ; 1000110 ; Unsigned Binary                                                                                ;
+; in13           ; 0100001 ; Unsigned Binary                                                                                ;
+; in14           ; 0000110 ; Unsigned Binary                                                                                ;
+; in15           ; 0001110 ; Unsigned Binary                                                                                ;
++----------------+---------+------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bcd_displayer:u_bcd_displayer|number_display:gen_display[1].u_number_display ;
++----------------+---------+------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                           ;
++----------------+---------+------------------------------------------------------------------------------------------------+
+; in0            ; 1000000 ; Unsigned Binary                                                                                ;
+; in1            ; 1111001 ; Unsigned Binary                                                                                ;
+; in2            ; 0100100 ; Unsigned Binary                                                                                ;
+; in3            ; 0110000 ; Unsigned Binary                                                                                ;
+; in4            ; 0011001 ; Unsigned Binary                                                                                ;
+; in5            ; 0010010 ; Unsigned Binary                                                                                ;
+; in6            ; 0000010 ; Unsigned Binary                                                                                ;
+; in7            ; 1111000 ; Unsigned Binary                                                                                ;
+; in8            ; 0000000 ; Unsigned Binary                                                                                ;
+; in9            ; 0010000 ; Unsigned Binary                                                                                ;
+; in10           ; 0001000 ; Unsigned Binary                                                                                ;
+; in11           ; 0000011 ; Unsigned Binary                                                                                ;
+; in12           ; 1000110 ; Unsigned Binary                                                                                ;
+; in13           ; 0100001 ; Unsigned Binary                                                                                ;
+; in14           ; 0000110 ; Unsigned Binary                                                                                ;
+; in15           ; 0001110 ; Unsigned Binary                                                                                ;
++----------------+---------+------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_M:u_counter_M"                                                                                                                                                    ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; en       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                          ;
+; counter  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; count_up ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[1].u_number_display" ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                              ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------+
+; sel  ; Input ; Info     ; Stuck at GND                                                                                                         ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[0].u_number_display" ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                              ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------+
+; sel  ; Input ; Info     ; Stuck at GND                                                                                                         ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer|counter_M:u_counter"                                                                                                           ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                               ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; counter ; Output ; Warning  ; Output or bidir port (5 bits) is smaller than the port expression (8 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vibration_clearing_rtl:u_vc|timer:u_timer"                                                                     ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; cur_time   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; count_time ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "vibration_clearing_rtl:u_vc|clk_div:u_clk_div" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; rstn ; Input ; Info     ; Stuck at VCC                                    ;
++------+-------+----------+-------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 45                          ;
+; cycloneiii_ff         ; 33                          ;
+;     CLR               ; 16                          ;
+;     SCLR              ; 16                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 57                          ;
+;     arith             ; 19                          ;
+;         2 data inputs ; 19                          ;
+;     normal            ; 38                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 22                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.05                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Mon Apr 21 21:09:06 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vibration_clearing -c vibration_clearing
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/vibration_clearing_rtl.v
+    Info (12023): Found entity 1: vibration_clearing_rtl File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing_rtl.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/vibration_clearing.v
+    Info (12023): Found entity 1: vibration_clearing File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/timer.v
+    Info (12023): Found entity 1: timer File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/number_display.v
+    Info (12023): Found entity 1: number_display File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/number_display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/counter_m.v
+    Info (12023): Found entity 1: counter_M File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/counter_M.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/clk_div.v
+    Info (12023): Found entity 1: clk_div File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/clk_div.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/bin2bcd.v
+    Info (12023): Found entity 1: bin2bcd File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/bin2bcd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /a_study/aaa-daerxia/ic/experiment/4.21/vibration_clearing/code/bcd_displayer.v
+    Info (12023): Found entity 1: bcd_displayer File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/bcd_displayer.v Line: 4
+Info (12127): Elaborating entity "vibration_clearing" for the top level hierarchy
+Warning (10034): Output port "LEDG[7..1]" at vibration_clearing.v(5) has no driver File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+Info (12128): Elaborating entity "vibration_clearing_rtl" for hierarchy "vibration_clearing_rtl:u_vc" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 16
+Info (12128): Elaborating entity "clk_div" for hierarchy "vibration_clearing_rtl:u_vc|clk_div:u_clk_div" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing_rtl.v Line: 22
+Info (12128): Elaborating entity "timer" for hierarchy "vibration_clearing_rtl:u_vc|timer:u_timer" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing_rtl.v Line: 31
+Info (12128): Elaborating entity "clk_div" for hierarchy "vibration_clearing_rtl:u_vc|timer:u_timer|clk_div:u_clk_div" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v Line: 19
+Info (12128): Elaborating entity "counter_M" for hierarchy "vibration_clearing_rtl:u_vc|timer:u_timer|counter_M:u_counter" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v Line: 30
+Warning (10230): Verilog HDL assignment warning at counter_M.v(21): truncated value with size 32 to match size of target (5) File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/counter_M.v Line: 21
+Info (12128): Elaborating entity "bcd_displayer" for hierarchy "vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v Line: 39
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|bin2bcd:u_bin2bcd" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/bcd_displayer.v Line: 19
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(16): truncated value with size 5 to match size of target (4) File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/bin2bcd.v Line: 16
+Info (12128): Elaborating entity "number_display" for hierarchy "vibration_clearing_rtl:u_vc|timer:u_timer|bcd_displayer:u_displayer|number_display:gen_display[0].u_number_display" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/bcd_displayer.v Line: 29
+Info (12128): Elaborating entity "counter_M" for hierarchy "counter_M:u_counter_M" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 28
+Warning (10230): Verilog HDL assignment warning at counter_M.v(21): truncated value with size 32 to match size of target (4) File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/counter_M.v Line: 21
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "counter[7]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+    Warning (12110): Net "counter[6]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+    Warning (12110): Net "counter[5]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+    Warning (12110): Net "counter[4]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "vibration_clearing_rtl:u_vc|timer:u_timer|counter[7]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v Line: 21
+    Warning (12110): Net "vibration_clearing_rtl:u_vc|timer:u_timer|counter[6]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v Line: 21
+    Warning (12110): Net "vibration_clearing_rtl:u_vc|timer:u_timer|counter[5]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/timer.v Line: 21
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "counter[7]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+    Warning (12110): Net "counter[6]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+    Warning (12110): Net "counter[5]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+    Warning (12110): Net "counter[4]" is missing source, defaulting to GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 19
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 5
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 8
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 8
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "vibration_clearing_rtl:u_vc|key_out1" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing_rtl.v Line: 6
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 20 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[2]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[3]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[4]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[6]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[7]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[8]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[9]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[10]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[11]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[12]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[13]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[14]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[15]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[16]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[17]" File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/vibration_clearing/code/vibration_clearing.v Line: 4
+Info (21057): Implemented 101 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 56 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 4866 megabytes
+    Info: Processing ended: Mon Apr 21 21:09:14 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:16
+
+

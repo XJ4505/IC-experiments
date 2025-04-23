@@ -1,0 +1,7 @@
+read_verilog -sv -formal -overwrite {workspace}/counter_M/code/counter_rtl.v
+read_verilog -sv -formal -overwrite {workspace}/counter_M/code/bcd_displayer.v
+read_verilog -sv -formal -overwrite {workspace}/BCD/code/bin2bcd.v
+read_verilog -sv -formal -overwrite {workspace}/calculator/code/number_display.v
+read_verilog -sv -formal -overwrite {workspace}/counter_M/code/counter_M.v
+design -reset-vlog; proc;
+write_json {workspace}/netlist/counter_M.json

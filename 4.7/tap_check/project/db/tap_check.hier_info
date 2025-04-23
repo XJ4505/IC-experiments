@@ -1,0 +1,26 @@
+|tap_check
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+KEY[2] => KEY[2].IN1
+KEY[3] => KEY[3].IN1
+LEDG[0] <= tap_check_rtl:u_tap.led
+LEDG[1] <= tap_check_rtl:u_tap.led
+LEDG[2] <= tap_check_rtl:u_tap.led
+LEDG[3] <= tap_check_rtl:u_tap.led
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= <GND>
+
+
+|tap_check|tap_check_rtl:u_tap
+taps[0] => led[0].DATAIN
+taps[1] => led[1].DATAIN
+taps[2] => led[2].DATAIN
+taps[3] => led[3].DATAIN
+led[0] <= taps[0].DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= taps[1].DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= taps[2].DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= taps[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

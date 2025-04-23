@@ -1,0 +1,4 @@
+read_verilog -sv -formal -overwrite {workspace}/vibration_clearing/code/clk_div.v
+read_verilog -sv -formal -overwrite {workspace}/vibration_clearing/code/vibration_clearing_rtl.v
+design -reset-vlog; proc;
+write_json {workspace}/netlist/vibration_clearing_rtl.json
