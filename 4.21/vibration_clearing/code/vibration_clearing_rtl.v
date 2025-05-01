@@ -22,17 +22,17 @@ module vibration_clearing_rtl (
     );
     reg [4: 0] time_cnt;
     always @(posedge clk_out or posedge timer_rst) begin
-        if(!rstn) begin
+        if(timer_rst) begin
             time_cnt <= 0;
             timeup <= 1'b0;
         end
         else if(timer_en) begin
             if(time_cnt == 5'b10100) begin
-                time_cnt <=0;
+                time_cnt <= 0;
                 timeup <= 1'b1;
             end
             else begin
-                time_cnt <= time_cnt + 1'b1;
+                time_cnt <= time_cnt + 1;
             end
         end
     end

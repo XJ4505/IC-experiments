@@ -1,0 +1,6 @@
+read_verilog -sv -formal -overwrite {workspace}/4.21/multi_mode_clock/code/bcd_displayer.v
+read_verilog -sv -formal -overwrite {workspace}/4.21/multi_mode_clock/code/bin2bcd.v
+read_verilog -sv -formal -overwrite {workspace}/4.21/multi_mode_clock/code/number_display.v
+read_verilog -sv -formal -overwrite {workspace}/4.21/multi_mode_clock/code/displayer.v
+design -reset-vlog; proc;
+write_json {workspace}/netlist/displayer.json

@@ -1,16 +1,30 @@
 module stop_watch #(
     parameter HOUR      = 5,
     parameter MINUTE    = 3,
-    parameter SECOND    = 21
+    parameter SECOND    = 21,
+    parameter N         = 25_000_000
 )(
     input clk,
     input rst,
     input start,
+    input [3: 0] cur_state,
     output reg [7: 0] cur_second,
     output reg [7: 0] cur_minute,
     output reg [7: 0] cur_hour
 );
-    always @(posedge clk or posedge rst) begin
+    wire clk_out;//clock of the stop watch (real time)
+    //to seperate the clock of the stop watch and the clock of the system
+    //make sure the stop watch start or stop immediately when start signal changes
+    clk_div #(
+        .N 	(N  )
+        ) u_clk_div (
+        .clk     	(clk),
+        .en     	(start),
+        .rstn    	(~rst),
+        .clk_out 	(clk_out)
+    );
+    
+    always @(posedge clk_out or posedge rst) begin
         if(rst) begin
             cur_second <= 0;
             cur_minute <= 0;
@@ -37,6 +51,5 @@ module stop_watch #(
             end
         end
     end
-//TODO way to display: whether to display here or in the top module(prefered: to display in the top module)
 
 endmodule

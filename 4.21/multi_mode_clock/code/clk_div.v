@@ -3,7 +3,8 @@
 module clk_div #(
     parameter N = 2     //represent how many clk cycles the new clk takes in one clk cycle
     )(
-    input       clk,        
+    input       clk, 
+    input       en,
     input       rstn,      
     output      clk_out
 );
@@ -13,11 +14,13 @@ module clk_div #(
         if(!rstn) begin
             cnt <= 0;
         end
-        else if(cnt < N - 1) begin
-            cnt <= cnt + 1'b1;
-        end 
-        else begin 
-            cnt <= 0;
+        else if(en) begin
+            if(cnt < N - 1) begin
+                cnt <= cnt + 1'b1;
+            end 
+            else begin 
+                cnt <= 0;
+            end
         end
     end
     
@@ -25,11 +28,13 @@ module clk_div #(
         if(!rstn) begin
             pos_clk <= 1'b0;
         end
-        else if(cnt < ((N + 1)>> 1)) begin
-            pos_clk <= 1'b1;
-        end
-        else begin
-            pos_clk <= 1'b0;
+        else if(en) begin
+            if(cnt < ((N + 1)>> 1)) begin
+                pos_clk <= 1'b1;
+            end
+            else begin
+                pos_clk <= 1'b0;
+            end
         end
     end
 
@@ -37,14 +42,16 @@ module clk_div #(
         if(!rstn) begin
             neg_clk <= 1'b0;
         end
-        else if(N[0] ^ 1'b1) begin         
-            neg_clk <= 1'b1;        //don't need it when N is odd
-        end
-        else if(cnt < ((N + 1)>> 1)) begin
-            neg_clk <= 1'b1;
-        end
-        else begin
-            neg_clk <= 1'b0;
+        else if(en) begin
+            if(N[0] ^ 1'b1) begin         
+                neg_clk <= 1'b1;        //don't need it when N is odd
+            end
+            else if(cnt < ((N + 1)>> 1)) begin
+                neg_clk <= 1'b1;
+            end
+            else begin
+                neg_clk <= 1'b0;
+            end
         end
     end
 

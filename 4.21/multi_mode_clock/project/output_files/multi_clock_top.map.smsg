@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at multi_clock_top.v(45): object "ALARM_second" differs only in case from object "alarm_second" in the same scope File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/multi_mode_clock/code/multi_clock_top.v Line: 45
+Info (10281): Verilog HDL Declaration information at multi_clock_top.v(46): object "ALARM_minute" differs only in case from object "alarm_minute" in the same scope File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/multi_mode_clock/code/multi_clock_top.v Line: 46
+Info (10281): Verilog HDL Declaration information at multi_clock_top.v(47): object "ALARM_hour" differs only in case from object "alarm_hour" in the same scope File: D:/A_study/AAA-DaErXia/IC/experiment/4.21/multi_mode_clock/code/multi_clock_top.v Line: 47

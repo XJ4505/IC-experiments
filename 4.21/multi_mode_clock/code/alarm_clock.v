@@ -6,7 +6,7 @@ module alarm_clock #(
     input clk,
     input rst,
     input en,
-    input dis_alarm,
+    input dis_alarm, //turn it off!
     input [2: 0] signal_increase,
     input [2: 0] signal_decrease,
 
@@ -19,11 +19,11 @@ module alarm_clock #(
     output reg [7: 0] set_hour,
     output reg        alarming
 );
-    always @(posedge clk or posedge rst or negedge signal_increase or negedge signal_decrease) begin
+    always @(posedge clk or posedge rst) begin
         if(rst) begin
             set_second <= 0;
             set_minute <= 0;
-            set_hour <= 8'd8; //reset to time: 08:00:00
+            set_hour <= 8'd2; //reset to time: 02:00:00
             alarming <= 0;
         end
         else begin
@@ -34,6 +34,9 @@ module alarm_clock #(
                 else if(dis_alarm) begin
                     alarming <= 0;
                 end
+            end
+            else begin
+                alarming <= 0;
             end
             if(|signal_increase) begin
                 set_second <= signal_increase[0]? ((set_second == SECOND - 1)? 0: set_second + 1): set_second;

@@ -1,0 +1,341 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -7.688
+TNS   : -583.154
+
+Type  : Slow 1200mV 85C Model Setup 'clk_div:u_clk_div|pos_clk'
+Slack : -6.817
+TNS   : -63.918
+
+Type  : Slow 1200mV 85C Model Setup 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -6.734
+TNS   : -52.984
+
+Type  : Slow 1200mV 85C Model Setup 'clock:u_clock|counter_M:u_second|sign'
+Slack : -6.623
+TNS   : -57.713
+
+Type  : Slow 1200mV 85C Model Setup 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : -2.135
+TNS   : -37.463
+
+Type  : Slow 1200mV 85C Model Setup 'SW[16]'
+Slack : -2.065
+TNS   : -38.341
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_div:u_clk_div|pos_clk'
+Slack : 0.411
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SW[16]'
+Slack : 0.549
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock:u_clock|counter_M:u_second|sign'
+Slack : 1.610
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock:u_clock|counter_M:u_minute|sign'
+Slack : 1.695
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'clk_div:u_clk_div|pos_clk'
+Slack : -4.511
+TNS   : -38.787
+
+Type  : Slow 1200mV 85C Model Recovery 'clock:u_clock|counter_M:u_second|sign'
+Slack : -4.469
+TNS   : -38.034
+
+Type  : Slow 1200mV 85C Model Recovery 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -4.445
+TNS   : -34.947
+
+Type  : Slow 1200mV 85C Model Recovery 'SW[16]'
+Slack : -3.407
+TNS   : -68.375
+
+Type  : Slow 1200mV 85C Model Recovery 'CLOCK_50'
+Slack : -1.105
+TNS   : -61.939
+
+Type  : Slow 1200mV 85C Model Removal 'SW[16]'
+Slack : -3.226
+TNS   : -3.226
+
+Type  : Slow 1200mV 85C Model Removal 'CLOCK_50'
+Slack : 0.969
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'clock:u_clock|counter_M:u_minute|sign'
+Slack : 1.727
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'clock:u_clock|counter_M:u_second|sign'
+Slack : 1.796
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'clk_div:u_clk_div|pos_clk'
+Slack : 1.881
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -263.855
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SW[16]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : -1.285
+TNS   : -30.840
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_div:u_clk_div|pos_clk'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock:u_clock|counter_M:u_second|sign'
+Slack : -1.285
+TNS   : -11.565
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -1.285
+TNS   : -10.280
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -6.932
+TNS   : -515.228
+
+Type  : Slow 1200mV 0C Model Setup 'clk_div:u_clk_div|pos_clk'
+Slack : -6.129
+TNS   : -57.331
+
+Type  : Slow 1200mV 0C Model Setup 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -6.092
+TNS   : -47.836
+
+Type  : Slow 1200mV 0C Model Setup 'clock:u_clock|counter_M:u_second|sign'
+Slack : -5.891
+TNS   : -51.778
+
+Type  : Slow 1200mV 0C Model Setup 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : -1.877
+TNS   : -32.070
+
+Type  : Slow 1200mV 0C Model Setup 'SW[16]'
+Slack : -1.759
+TNS   : -34.948
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_div:u_clk_div|pos_clk'
+Slack : 0.367
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SW[16]'
+Slack : 0.509
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock:u_clock|counter_M:u_second|sign'
+Slack : 1.472
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock:u_clock|counter_M:u_minute|sign'
+Slack : 1.601
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clk_div:u_clk_div|pos_clk'
+Slack : -4.128
+TNS   : -35.463
+
+Type  : Slow 1200mV 0C Model Recovery 'clock:u_clock|counter_M:u_second|sign'
+Slack : -4.045
+TNS   : -34.438
+
+Type  : Slow 1200mV 0C Model Recovery 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -4.013
+TNS   : -31.634
+
+Type  : Slow 1200mV 0C Model Recovery 'SW[16]'
+Slack : -3.022
+TNS   : -59.761
+
+Type  : Slow 1200mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.924
+TNS   : -49.012
+
+Type  : Slow 1200mV 0C Model Removal 'SW[16]'
+Slack : -2.801
+TNS   : -2.801
+
+Type  : Slow 1200mV 0C Model Removal 'CLOCK_50'
+Slack : 0.871
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clock:u_clock|counter_M:u_minute|sign'
+Slack : 1.603
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clock:u_clock|counter_M:u_second|sign'
+Slack : 1.654
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clk_div:u_clk_div|pos_clk'
+Slack : 1.731
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -263.855
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SW[16]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : -1.285
+TNS   : -30.840
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_div:u_clk_div|pos_clk'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock:u_clock|counter_M:u_second|sign'
+Slack : -1.285
+TNS   : -11.565
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -1.285
+TNS   : -10.280
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.491
+TNS   : -194.012
+
+Type  : Fast 1200mV 0C Model Setup 'clk_div:u_clk_div|pos_clk'
+Slack : -2.911
+TNS   : -26.046
+
+Type  : Fast 1200mV 0C Model Setup 'clock:u_clock|counter_M:u_second|sign'
+Slack : -2.886
+TNS   : -24.774
+
+Type  : Fast 1200mV 0C Model Setup 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -2.860
+TNS   : -22.369
+
+Type  : Fast 1200mV 0C Model Setup 'SW[16]'
+Slack : -0.798
+TNS   : -11.009
+
+Type  : Fast 1200mV 0C Model Setup 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : -0.544
+TNS   : -6.410
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.010
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SW[16]'
+Slack : 0.076
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_div:u_clk_div|pos_clk'
+Slack : 0.191
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock:u_clock|counter_M:u_second|sign'
+Slack : 0.576
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock:u_clock|counter_M:u_minute|sign'
+Slack : 0.673
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'SW[16]'
+Slack : -2.116
+TNS   : -43.272
+
+Type  : Fast 1200mV 0C Model Recovery 'clock:u_clock|counter_M:u_second|sign'
+Slack : -1.921
+TNS   : -16.480
+
+Type  : Fast 1200mV 0C Model Recovery 'clk_div:u_clk_div|pos_clk'
+Slack : -1.918
+TNS   : -16.652
+
+Type  : Fast 1200mV 0C Model Recovery 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -1.874
+TNS   : -14.634
+
+Type  : Fast 1200mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.043
+TNS   : -0.387
+
+Type  : Fast 1200mV 0C Model Removal 'SW[16]'
+Slack : -1.864
+TNS   : -1.864
+
+Type  : Fast 1200mV 0C Model Removal 'CLOCK_50'
+Slack : 0.477
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clock:u_clock|counter_M:u_minute|sign'
+Slack : 0.761
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clock:u_clock|counter_M:u_second|sign'
+Slack : 0.783
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clk_div:u_clk_div|pos_clk'
+Slack : 0.822
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -268.713
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SW[16]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'stop_watch:u_stop_watch|clk_div:u_clk_div|neg_clk'
+Slack : -1.000
+TNS   : -24.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_div:u_clk_div|pos_clk'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock:u_clock|counter_M:u_second|sign'
+Slack : -1.000
+TNS   : -9.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock:u_clock|counter_M:u_minute|sign'
+Slack : -1.000
+TNS   : -8.000
+
+------------------------------------------------------------

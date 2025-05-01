@@ -1,5 +1,5 @@
 Flow report for vibration_clearing
-Mon Apr 21 21:09:35 2025
+Mon Apr 28 19:12:20 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Mon Apr 21 21:09:32 2025          ;
+; Flow Status                        ; Successful - Mon Apr 28 19:12:16 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; vibration_clearing                             ;
 ; Top-level Entity Name              ; vibration_clearing                             ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 63 / 114,480 ( < 1 % )                         ;
-;     Total combinational functions  ; 56 / 114,480 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 33 / 114,480 ( < 1 % )                         ;
-; Total registers                    ; 33                                             ;
+; Total logic elements               ; 60 / 114,480 ( < 1 % )                         ;
+;     Total combinational functions  ; 54 / 114,480 ( < 1 % )                         ;
+;     Dedicated logic registers      ; 31 / 114,480 ( < 1 % )                         ;
+; Total registers                    ; 31                                             ;
 ; Total pins                         ; 45 / 529 ( 9 % )                               ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/21/2025 21:09:07 ;
+; Start date & time ; 04/28/2025 19:11:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vibration_clearing  ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2545679828978.174524094744296          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 2545679828978.174583871121080          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -92,11 +92,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4866 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:14     ; 1.0                     ; 6833 MB             ; 00:00:33                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4866 MB             ; 00:00:14                           ;
+; Fitter               ; 00:00:14     ; 1.0                     ; 6833 MB             ; 00:00:30                           ;
 ; Assembler            ; 00:00:03     ; 1.0                     ; 4980 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4971 MB             ; 00:00:02                           ;
-; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:54                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4971 MB             ; 00:00:03                           ;
+; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:50                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

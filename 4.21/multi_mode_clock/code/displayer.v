@@ -1,3 +1,10 @@
+/*
+    to display the time on 7-segment digits
+    
+    extra function:
+    1. flash the corresponding digit when setting the time
+    2. flash the corresponding digit whhen alarm clock is alarming
+*/
 module displayer (
     input clk,
     input alarming,
@@ -6,37 +13,27 @@ module displayer (
     input hour_flash,
     input [23: 0] cur_time,
 
-    output reg         led_signal,
-    output reg [41: 0] digits
+    output [41: 0]     digits
 );
-    reg display_en;
     reg [2: 0] digits_en; // 0: second, 1: minute, 2: hour
     always @(posedge clk) begin
-        if(second_flash) begin
+        if(second_flash || alarming) begin
             digits_en[0] <= ~digits_en[0]; 
         end
         else begin
             digits_en[0] <= 1;
         end
-        if(minute_flash) begin
+        if(minute_flash || alarming) begin
             digits_en[1] <= ~digits_en[1]; 
         end
         else begin
             digits_en[1] <= 1;
         end
-        if(hour_flash) begin
+        if(hour_flash || alarming) begin
             digits_en[2] <= ~digits_en[2]; 
         end
         else begin
             digits_en[2] <= 1;
-        end
-        if(alarming) begin
-            display_en <= ~display_en;
-            led_signal <= ~led_signal;
-        end
-        else begin
-            display_en <= 1;
-            led_signal <= 0;
         end
     end
 
@@ -47,7 +44,7 @@ module displayer (
                 .BIN_WIDTH  (8),
                 .BCD_CNT    (2)
             ) u_displayer (
-                .en         (display_en | digits_en[gen_i]),
+                .en         (digits_en[gen_i]),
                 .bin_code   (cur_time[gen_i*8 +: 8]),
                 .disp_result(digits[gen_i*14 +: 14])
             );
